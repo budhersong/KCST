@@ -169,6 +169,27 @@ p{text-wrap:pretty}
 .faq details>p{padding:0 60px 24px 26px;color:var(--text-2);font-size:16px;position:relative}
 .faq details>p::before{content:'';display:block;position:absolute;left:26px;right:60px;top:-6px;border-top:1px solid var(--line)}
 
+/* 회비 안내 */
+.fee{margin:16px 60px 0 26px;padding:18px 20px;border-radius:14px;background:var(--paper);border:1px solid var(--line)}
+.fee__k{font-size:12px;letter-spacing:.08em;color:var(--slate);font-weight:600;margin:0 0 10px}
+.fee__rows{list-style:none;margin:0;padding:0}
+.fee__r{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--text-2)}
+.fee__r:last-child{border-bottom:0}
+.fee__r b{color:var(--text);font-weight:600;white-space:nowrap}
+.fee__bank{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.fee__bank p{font-size:14px;color:var(--text-2);line-height:1.6;padding:2px 0;margin:0}
+.fee__bank b{color:var(--text);font-weight:600}
+
+/* 입회원서 신청 */
+.join-cta{margin:18px 60px 26px 26px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.join-cta p{font-size:13px;color:var(--slate);margin:0;line-height:1.6}
+
+/* 이메일 링크 */
+.mail{color:var(--orange);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(228,87,46,.3);transition:border-color .2s}
+.mail:hover{border-bottom-color:var(--orange)}
+.ft .mail{color:var(--paper);border-bottom-color:rgba(244,245,242,.35)}
+.ft .mail:hover{color:var(--orange);border-bottom-color:var(--orange)}
+
 /* ---------- 창립대회 포스터 팝업 ---------- */
 .pm{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:clamp(0px,3vw,32px);opacity:0;transition:opacity .22s ease}
 .pm.is-on{opacity:1}
@@ -181,6 +202,8 @@ p{text-wrap:pretty}
 .pm__acts{display:flex;align-items:center;gap:10px;flex:none}
 .pm__act{font-size:13px;font-weight:500;color:#C9D3DD;text-decoration:none;padding:8px 14px;border-radius:999px;border:1px solid rgba(159,179,200,.35);transition:color .2s,border-color .2s}
 .pm__act:hover{color:var(--paper);border-color:var(--paper)}
+.pm__act--cta{background:var(--orange);border-color:var(--orange);color:#fff;font-weight:600}
+.pm__act--cta:hover{background:#cf4a23;border-color:#cf4a23;color:#fff}
 .pm__close{width:40px;height:40px;flex:none;display:grid;place-items:center;background:rgba(244,245,242,.08);border:0;border-radius:50%;color:var(--paper);cursor:pointer;transition:background .2s}
 .pm__close:hover{background:var(--orange)}
 .pm__scroll{overflow:auto;-webkit-overflow-scrolling:touch;background:var(--paper)}
@@ -248,5 +271,8 @@ p{text-wrap:pretty}
   .hd__logo img{height:28px}
   .faq summary{padding:20px 54px 20px 20px;font-size:17px}
   .faq details>p{padding:0 24px 22px 20px}
+  .fee{margin:16px 20px 0;padding:16px}
+  .join-cta{margin:16px 20px 22px;align-items:stretch}
+  .join-cta .btn{justify-content:center}
   .hero__cta .btn{flex:1;justify-content:center}
 }
