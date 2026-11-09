@@ -158,6 +158,34 @@ p{text-wrap:pretty}
 .ph--goal .ph__step,.ph--goal .ph__yr{color:var(--orange)}
 .ph--goal .ph__yr{font-size:clamp(40px,4.4vw,60px)}
 
+/* ===== 후원기관 ===== */
+.pt{padding:clamp(48px,5.5vw,68px) 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pt__head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px 32px;flex-wrap:wrap;margin-bottom:clamp(24px,2.8vw,34px)}
+.pt__k{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);display:flex;align-items:center;gap:9px}
+.pt__k::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--orange);flex:none}
+.pt__head>div{flex:0 0 auto}
+.pt__title{font-size:clamp(19px,2vw,25px);font-weight:700;letter-spacing:-.02em;color:var(--navy);margin-top:10px;white-space:nowrap}
+.pt__d{font-size:15px;color:var(--text-2);max-width:30em}
+.pt__row{list-style:none;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 0;overflow:hidden}
+.pt__row li{flex:1 1 0;min-width:140px;display:grid;place-items:center;padding:clamp(18px,2.2vw,26px) 16px;min-height:100px;border-right:1px solid var(--line)}
+.pt__row li:last-child{border-right:0}
+.pt__row img{max-width:100%;width:auto;height:auto;max-height:44px;opacity:.9;transition:opacity .25s,transform .25s}
+.pt__row li:hover img{transform:translateY(-1px)}
+.pt__row li:hover img{opacity:1}
+.pt__note{margin-top:18px;font-size:14px;color:var(--text-2)}
+@media (max-width:900px){
+  .pt__row li{flex:1 1 calc(33.333% - 1px);min-width:0;min-height:84px}
+  .pt__row li:nth-child(3n){border-right:0}
+  .pt__row img{max-height:34px}
+}
+@media (max-width:560px){
+  .pt__row li{flex:1 1 50%;min-height:78px;padding:16px 10px}
+  .pt__row li:nth-child(3n){border-right:1px solid var(--line)}
+  .pt__row li:nth-child(2n){border-right:0}
+  .pt__row img{max-height:28px}
+  .pt__head{flex-direction:column;gap:6px}
+}
+
 /* ===== 04 · FAQ ===== */
 .faq{display:grid;gap:12px}
 .faq details{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:border-color .25s,box-shadow .25s}
@@ -169,20 +197,25 @@ p{text-wrap:pretty}
 .faq details>p{padding:0 60px 24px 26px;color:var(--text-2);font-size:16px;position:relative}
 .faq details>p::before{content:'';display:block;position:absolute;left:26px;right:60px;top:-6px;border-top:1px solid var(--line)}
 
-/* 회비 안내 */
-.fee{margin:16px 60px 0 26px;padding:18px 20px;border-radius:14px;background:var(--paper);border:1px solid var(--line)}
-.fee__k{font-size:12px;letter-spacing:.08em;color:var(--slate);font-weight:600;margin:0 0 10px}
-.fee__rows{list-style:none;margin:0;padding:0}
-.fee__r{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--text-2)}
-.fee__r:last-child{border-bottom:0}
-.fee__r b{color:var(--text);font-weight:600;white-space:nowrap}
-.fee__bank{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
-.fee__bank p{font-size:14px;color:var(--text-2);line-height:1.6;padding:2px 0;margin:0}
-.fee__bank b{color:var(--text);font-weight:600}
+/* 회비 납부 안내 (FAQ 회원가입 항목) */
+.fee{margin:0 60px 26px 26px;background:var(--paper);border-radius:14px;padding:22px 24px 24px}
+.fee__k{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:16px}
+.fee__rows{list-style:none;display:grid;gap:0}
+.fee__r{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--text-2)}
+.fee__r:last-child{border-bottom:0;padding-bottom:2px}
+.fee__r b{font-family:var(--f-en);font-size:16px;font-weight:500;color:var(--text);white-space:nowrap}
+.fee__bank{margin-top:18px;padding-top:18px;border-top:1px dashed var(--line)}
+.fee__bank p{font-size:14.5px;color:var(--text-2);line-height:1.75}
+.fee__bank b{font-family:var(--f-en);font-weight:500;color:var(--navy);letter-spacing:.01em}
 
-/* 입회원서 신청 */
-.join-cta{margin:18px 60px 26px 26px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start;gap:10px}
-.join-cta p{font-size:13px;color:var(--slate);margin:0;line-height:1.6}
+/* 회원 가입 신청 CTA (FAQ 회원가입 항목) */
+.join-cta{margin:0 60px 26px 26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 22px;border-radius:14px;background:rgba(228,87,46,.06);border:1px solid rgba(228,87,46,.22)}
+.join-cta p{font-size:14px;line-height:1.6;color:var(--text-2);margin:0;flex:1 1 220px}
+.join-cta .btn{flex:none}
+@media (max-width:620px){
+  .join-cta{margin:0 20px 22px;padding:16px 18px;gap:12px}
+  .join-cta .btn{width:100%;justify-content:center}
+}
 
 /* 이메일 링크 */
 .mail{color:var(--orange);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(228,87,46,.3);transition:border-color .2s}
@@ -202,8 +235,8 @@ p{text-wrap:pretty}
 .pm__acts{display:flex;align-items:center;gap:10px;flex:none}
 .pm__act{font-size:13px;font-weight:500;color:#C9D3DD;text-decoration:none;padding:8px 14px;border-radius:999px;border:1px solid rgba(159,179,200,.35);transition:color .2s,border-color .2s}
 .pm__act:hover{color:var(--paper);border-color:var(--paper)}
-.pm__act--cta{background:var(--orange);border-color:var(--orange);color:#fff;font-weight:600}
-.pm__act--cta:hover{background:#cf4a23;border-color:#cf4a23;color:#fff}
+.pm__act--cta{background:var(--orange);border-color:var(--orange);color:#fff !important;font-weight:600}
+.pm__act--cta:hover{background:#cf4a23;border-color:#cf4a23}
 .pm__close{width:40px;height:40px;flex:none;display:grid;place-items:center;background:rgba(244,245,242,.08);border:0;border-radius:50%;color:var(--paper);cursor:pointer;transition:background .2s}
 .pm__close:hover{background:var(--orange)}
 .pm__scroll{overflow:auto;-webkit-overflow-scrolling:touch;background:var(--paper)}
@@ -214,6 +247,10 @@ p{text-wrap:pretty}
   .pm__bar{padding:12px 12px 12px 16px}
   .pm__title{font-size:14px}
   .pm__act{font-size:12px;padding:7px 12px}
+  .pm__bar{flex-wrap:wrap;gap:10px}
+  .pm__title{flex:1 1 100%}
+  .pm__acts{width:100%}
+  .pm__act--cta{flex:1;text-align:center}
 }
 
 /* ---------- footer ---------- */
@@ -271,8 +308,10 @@ p{text-wrap:pretty}
   .hd__logo img{height:28px}
   .faq summary{padding:20px 54px 20px 20px;font-size:17px}
   .faq details>p{padding:0 24px 22px 20px}
-  .fee{margin:16px 20px 0;padding:16px}
-  .join-cta{margin:16px 20px 22px;align-items:stretch}
-  .join-cta .btn{justify-content:center}
+  .faq details>p::before{left:20px;right:24px}
+  .fee{margin:0 20px 22px;padding:18px 18px 20px}
+  .fee__r{font-size:15px}
+  .fee__r b{font-size:15.5px}
+  .fee__bank p{font-size:14px}
   .hero__cta .btn{flex:1;justify-content:center}
 }
